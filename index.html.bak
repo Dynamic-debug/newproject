@@ -1,0 +1,63 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>For My Love</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1>For My Love</h1>
+            <div id="bff-img"></div>
+            <h2 id="bday-age">MY LOVE</h2>
+            <h4 id="bday-date">we met each other on  July 16, 2021, and I've been in love with you ever since.</h4>
+            <section class="music-player" aria-label="Music player">
+                <h2 class="music-title">Songs for my love</h2>
+                <div class="music-artwork"></div>
+                <p id="song-name" class="song-name">Aankhon Mein Teri Ajab Si</p>
+                <label for="song-select">Choose a song:</label>
+                <select id="song-select"></select>
+                <div class="music-buttons">
+                    <button id="previous-song" type="button">Previous</button>
+                    <button id="play-song" type="button">Play</button>
+                    <button id="stop-song" type="button">Stop</button>
+                    <button id="next-song" type="button">Next</button>
+                </div>
+                <audio id="audio-player" controls preload="metadata"></audio>
+                <p id="audio-status" class="audio-status" role="status" aria-live="polite"></p>
+            </section>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">Feeling 1</h2>
+            <h3 class="gift-hint">(Hover over the gift)</h3>
+            <div class="gift-img1" id="gift-img-happy"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">Feeling 2</h2>
+            <div class="gift-img2" id="gift-img-hot"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">Feeling 3</h2>
+            <div class="gift-img3" id="gift-img-genius"></div>
+        </div>
+        
+        <div class="gift-section">
+            <h2 class="gift-title">Feeling 4</h2>
+            <div class="gift-img4" id="gift-img-badass"></div>
+        </div>
+        
+         <div class="gift-section">
+            <h2 class="gift-title">Feeling 5</h2>
+            <div class="gift-img5" id="gift-img-cheers"></div>
+        </div>
+        
+        <p id="footer"> I love YOU Meri Jaan , you are the best! </p>
+        <script src="music.js"></script>
+    </body>
+</html>

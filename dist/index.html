@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#2a0d1c">
+    <meta name="description" content="A little corner of the internet made for my love.">
+    <title>For My Love</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/assets/index-9N9rsoQV.css">
+</head>
+<body class="is-curtained">
+    <div class="backdrop" aria-hidden="true"></div>
+    <div class="petals" aria-hidden="true"></div>
+
+    <button class="curtain" id="curtain" type="button" aria-label="Tap to open the curtain">
+        <span class="curtain-panel curtain-left"></span>
+        <span class="curtain-panel curtain-right"></span>
+        <span class="curtain-cta">
+            <span class="curtain-heart" aria-hidden="true">♥</span>
+            <span class="curtain-text">Tap to open</span>
+            <span class="curtain-sub">something waits behind this</span>
+        </span>
+    </button>
+
+    <main class="page">
+        <header class="hero reveal">
+            <p class="eyebrow">A little something, just for you</p>
+            <h1 class="hero-title">For My Love</h1>
+
+            <button class="portrait" id="portrait" type="button" aria-label="Flip portrait" aria-pressed="false">
+                <span class="portrait-face portrait-front"></span>
+                <span class="portrait-face portrait-back"></span>
+                <span class="portrait-hint"></span>
+            </button>
+
+            <p class="badge">Meri Jaan</p>
+            <p class="hero-date">
+                We met on <strong>July&nbsp;16, 2021</strong><br>
+                and I've been in love with you ever since.
+            </p>
+        </header>
+
+        <section class="card player reveal" aria-label="Music player">
+            <h2 class="card-title">Songs for my love</h2>
+
+            <div class="artwork" id="artwork" aria-hidden="true"></div>
+
+            <p class="now-playing">
+                <span class="now-playing-label">Now playing</span>
+                <span id="song-name" class="song-name">Perfect</span>
+            </p>
+
+            <div class="progress">
+                <input id="seek" class="seek" type="range" min="0" max="100" value="0" step="0.1"
+                       aria-label="Seek through the song">
+                <div class="times">
+                    <span id="time-current">0:00</span>
+                    <span id="time-total">0:00</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="previous-song" class="ctrl" type="button" aria-label="Previous song">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6v12M20 6v12L9.5 12 20 6z"/></svg>
+                </button>
+                <button id="play-song" class="ctrl ctrl-main" type="button" aria-label="Play">
+                    <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13L19 12 8 5.5z"/></svg>
+                    <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5.5v13M15 5.5v13"/></svg>
+                </button>
+                <button id="next-song" class="ctrl" type="button" aria-label="Next song">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 6v12M4 6v12L14.5 12 4 6z"/></svg>
+                </button>
+            </div>
+
+            <label class="select-label" for="song-select">Pick a song</label>
+            <div class="select-wrap">
+                <select id="song-select"></select>
+            </div>
+
+            <audio id="audio-player" preload="metadata"></audio>
+            <p id="audio-status" class="audio-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="feelings" aria-label="Little notes for you">
+            <h2 class="section-title reveal">Five little feelings</h2>
+            <p class="section-hint reveal">Tap a card to read what's behind it</p>
+
+            <ul class="feeling-grid">
+                <li class="reveal">
+                    <button class="flip" type="button" aria-pressed="false">
+                        <span class="flip-inner">
+                            <span class="flip-face flip-front feel1-front"><span class="flip-label">Feeling 1</span></span>
+                            <span class="flip-face flip-back feel1-back"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="reveal">
+                    <button class="flip" type="button" aria-pressed="false">
+                        <span class="flip-inner">
+                            <span class="flip-face flip-front feel2-front"><span class="flip-label">Feeling 2</span></span>
+                            <span class="flip-face flip-back feel2-back"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="reveal">
+                    <button class="flip" type="button" aria-pressed="false">
+                        <span class="flip-inner">
+                            <span class="flip-face flip-front feel3-front"><span class="flip-label">Feeling 3</span></span>
+                            <span class="flip-face flip-back feel3-back"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="reveal">
+                    <button class="flip" type="button" aria-pressed="false">
+                        <span class="flip-inner">
+                            <span class="flip-face flip-front feel4-front"><span class="flip-label">Feeling 4</span></span>
+                            <span class="flip-face flip-back feel4-back"></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="reveal">
+                    <button class="flip" type="button" aria-pressed="false">
+                        <span class="flip-inner">
+                            <span class="flip-face flip-front feel5-front"><span class="flip-label">Feeling 5</span></span>
+                            <span class="flip-face flip-back feel5-back"></span>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </section>
+
+        <footer class="footer reveal">
+            <p class="footer-line">I love you, Meri Jaan —<br>you are the best thing that ever happened to me.</p>
+            <p class="footer-heart" aria-hidden="true">♥</p>
+        </footer>
+    </main>
+
+    <script src="music.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+const songs = [
+    ["Aankhon Mein Teri Ajab Si", "Aankhon-Mein-Teri-Ajab-Si.mp3"],
+    ["Aarzu", "Aarzu.mp3"],
+    ["Bulleya", "Bulleya.mp3"],
+    ["Can't Help Falling in Love", "Can-t-Help-Falling-In-Love-with.mp3"],
+    ["Die With A Smile", "Die-With-A-Smile.mp3"],
+    ["Dooron Dooron", "Dooron-Dooron.mp3"],
+    ["Fitoor", "Fitoor.mp3"],
+    ["Her", "her.mp3"],
+    ["I Like Me Better", "I-Like-Me-Better.mp3"],
+    ["I Think They Call This Love", "I-Think-They-Call-This-Love.mp3"],
+    ["I Wanna Be Yours", "I-Wanna-Be-Yours.mp3"],
+    ["Ik Kudi", "Ik-Kudi.mp3"],
+    ["It's You", "It-s-You.mp3"],
+    ["Kyon", "Kyon.mp3"],
+    ["Main Agar Kahoon", "Main-Agar-Kahoon.mp3"],
+    ["Naam Tera", "NAAM-TERA.mp3"],
+    ["Perfect", "Perfect.mp3"],
+    ["Samjho Na Nasamajh", "SAMJHO-NA-NASAMAJH.mp3"],
+    ["Subhanallah", "Subhanallah.mp3"],
+    ["Those Eyes", "Those-Eyes.mp3"],
+    ["Tu Chahiye", "Tu-Chahiye.mp3"],
+    ["Tum Se Hi", "Tum-Se-Hi.mp3"],
+    ["Zulfein", "Zulfein.mp3"]
+];
+
+const audioPlayer = document.querySelector("#audio-player");
+const songSelect = document.querySelector("#song-select");
+const songName = document.querySelector("#song-name");
+const playButton = document.querySelector("#play-song");
+const stopButton = document.querySelector("#stop-song");
+const previousButton = document.querySelector("#previous-song");
+const nextButton = document.querySelector("#next-song");
+const audioStatus = document.querySelector("#audio-status");
+
+let currentSongIndex = 0;
+
+for (const [title] of songs) {
+    const option = document.createElement("option");
+    option.value = title;
+    option.textContent = title;
+    songSelect.append(option);
+}
+
+function loadSong(index) {
+    currentSongIndex = (index + songs.length) % songs.length;
+    const [title, fileName] = songs[currentSongIndex];
+    audioPlayer.src = `./audio/${encodeURIComponent(fileName)}`;
+    audioPlayer.load();
+    songName.textContent = title;
+    songSelect.value = title;
+    audioStatus.textContent = "";
+}
+
+function playSong() {
+    audioPlayer.play().catch(() => {
+        audioStatus.textContent = "The song could not be played. Check that the audio file is available.";
+    });
+}
+
+playButton.addEventListener("click", () => {
+    playSong();
+});
+
+stopButton.addEventListener("click", () => {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+});
+
+previousButton.addEventListener("click", () => {
+    loadSong(currentSongIndex - 1);
+    playSong();
+});
+
+nextButton.addEventListener("click", () => {
+    loadSong(currentSongIndex + 1);
+    playSong();
+});
+
+songSelect.addEventListener("change", () => {
+    loadSong(songSelect.selectedIndex);
+    playSong();
+});
+
+audioPlayer.addEventListener("ended", () => {
+    loadSong(currentSongIndex + 1);
+    playSong();
+});
+
+audioPlayer.addEventListener("error", () => {
+    audioStatus.textContent = "This audio file could not be loaded.";
+});
+
+loadSong(currentSongIndex);
