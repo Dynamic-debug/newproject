@@ -69,7 +69,7 @@ function paintProgress() {
 function loadSong(index) {
     currentSongIndex = (index + songs.length) % songs.length;
     const [title, fileName] = songs[currentSongIndex];
-    audioPlayer.src = `./audio/${encodeURIComponent(fileName)}`;
+    audioPlayer.src = `/audio/${encodeURIComponent(fileName)}`;
     audioPlayer.load();
     songName.textContent = title;
     songSelect.selectedIndex = currentSongIndex;
